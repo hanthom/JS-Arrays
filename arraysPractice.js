@@ -81,9 +81,24 @@ var odds = [];
 
 
   //Code Here
-
-
+function divider(nums, evens, odds) {
+	var newNums = [];
+	for (var i = 0; i < nums.length; i++) {
+		if (nums[i] % 2 === 0) {
+			evens.push(nums[i]);
+		}
+		else {
+			odds.push(nums[i]);
+		}
+	}
+	newNums.push(evens);
+	newNums.push(odds);
+	return newNums;
+}
+console.log(divider(nums, evens, odds));
 //Next Problem
+
+
 
 
 var getRandomArbitrary = function() {
@@ -93,8 +108,16 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
+function finder(randNum, numbers) {
+	for (var i = 0; i < numbers.length; i++) {
+		if (numbers[i] === randNum) {
+			return true;
+		}
+	}
+	return false;
+}
 
-
+console.log(finder(getRandomArbitrary(), numbers));
 //Next problem
 
 
@@ -102,9 +125,16 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
+
   //Code Here
+function reverse(str) {
+    var x = str.split("");
+    x = x.reverse();
+    x = x.join("");
+    return x;
+}
 
-
+console.log(reverse(str));
 //Next Problem
 
 
