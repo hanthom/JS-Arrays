@@ -223,7 +223,17 @@ for(var i = 0; i < num2; i++){
 //Write a function that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+function longer(arr1, arr2) {
+	if (arr1.length > arr2.length) {
+		return arr1;
+	}
+	else if (arr1.length < arr2.length) {
+		return arr2;
+	}
+	else {
+		return "tie";
+	}
+}
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
@@ -231,9 +241,13 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
+function both(arr1, arr2) {
+	var newArray = [];
+	newArray = arr1.concat(arr2);
+	return newArray;
+}
   
-  
-  
+console.log(both(arr1, arr2));
 
 //NEXT PROBLEM
 
@@ -271,12 +285,22 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+console.log(devMountainEmployees.length);
+
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+for (var i = 0; i < devMountainEmployees.length; i++) {
+	if (devMountainEmployees[i].name === 'Cahlan') {
+		devMountainEmployees.splice(i, 1);
+	}
+}
 
 
 
@@ -318,7 +342,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
-
+var users = [];
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
@@ -332,6 +356,23 @@ var user1 = {
 
 //Your Code Here
 
+var user2 = {
+    name: 'Mark Cuban',
+    email: 'markcuban@gmail.com',
+    password: 'iLovecoffee',
+    username: 'sharktank'
+};
+var user3 = {
+    name: 'Mike Hantho',
+    email: 'm.hantho@gmail.com',
+    password: 'ifearprogramming',
+    username: 'justkidding'
+};
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
+
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
@@ -341,6 +382,12 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+
+for (var i = 0; i < users.length; i++) {
+	if (users[i].email === 'tylermcginnis33@gmail.com') {
+		users.splice(i,1);
+	}
+}
 
 //The activity we just did is very much how data works in 'the real world'.
 
